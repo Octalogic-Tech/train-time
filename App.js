@@ -5,106 +5,16 @@ import { createStackNavigator } from "react-navigation-stack";
 import Icon from "react-native-vector-icons/Ionicons";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Details!</Text>
-      </View>
-    );
-  }
-}
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {/* other code from before here */}
-        <Text>All events and Users</Text>
-      </View>
-    );
-  }
-}
-
-class FavoritesScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {/* other code from before here */}
-        <Text>Favorites</Text>
-      </View>
-    );
-  }
-}
-
-class AddEventScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {/* other code from before here */}
-        <Text>Add</Text>
-      </View>
-    );
-  }
-}
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {/* other code from before here */}
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate("Details")}
-        />
-      </View>
-    );
-  }
-}
-
-const HomeStack = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: `Train Time`,
-      headerTitleStyle: { color: "#FFF" },
-      headerStyle: { backgroundColor: "#282c2f" },
-      headerRightContainerStyle: {
-        marginRight: 20,
-      },
-      headerRight:()=>(
-        <Icon
-              name="md-search"
-              size={20}
-              color={"#2699FB"}
-              onPress={() => navigation.navigate("Details")}
-        />
-      ),
-    })
-  },
-  Details: { screen: DetailsScreen }
-});
-
-const SettingsStack = createStackNavigator({
-  Settings: { screen: SettingsScreen },
-  Details: { screen: DetailsScreen }
-});
-
-const FavoritesStack = createStackNavigator({
-  Settings: { screen: FavoritesScreen },
-  Details: { screen: DetailsScreen }
-});
-
-const AddEventStack = createStackNavigator({
-  Settings: { screen: AddEventScreen },
-  Details: { screen: DetailsScreen }
-});
+import HomeContainer from './src/container/HomeContainer';
+import SettingsContainer from './src/container/SettingsContainer';
+import FavoritesContainer from './src/container/FavoritesContainer';
+import CreateContainer from './src/container/CreateContainer';
 
 export default createAppContainer(
   createMaterialBottomTabNavigator(
     {
       Home: {
-        screen: HomeStack,
+        screen: HomeContainer,
         navigationOptions: {
           tabBarIcon: ({ focused }) => (
             <Icon
@@ -116,7 +26,7 @@ export default createAppContainer(
         }
       },
       Favorites: {
-        screen: FavoritesStack,
+        screen: FavoritesContainer,
         navigationOptions: {
           tabBarIcon: ({ focused }) => (
             <Icon
@@ -128,7 +38,7 @@ export default createAppContainer(
         }
       },
       Create: {
-        screen: AddEventStack,
+        screen: CreateContainer,
         navigationOptions: {
           tabBarIcon: ({ focused }) => (
             <Icon
@@ -140,7 +50,7 @@ export default createAppContainer(
         }
       },
       Settings: {
-        screen: SettingsStack,
+        screen: SettingsContainer,
         navigationOptions: {
           tabBarIcon: ({ focused }) => (
             <Icon
