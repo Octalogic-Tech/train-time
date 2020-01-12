@@ -3,34 +3,39 @@ import { View, Text, Button } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import Icon from "react-native-vector-icons/Ionicons";
 
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+
 import HeaderOptions from "../../components/HeaderOptions";
-import HomeScreen from "../../components/HomeScreen";
+import EventsScreen from "../../components/EventsScreen";
+import UsersScreen from "../../components/UsersScreen";
 import SearchScreen from "../../components/SearchScreen";
 
-// class HomeScreen extends React.Component {
-//   render() {
-//     return (
-//       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//         {/* other code from before here */}
-//         <Text>All Events and Users</Text>
-//       </View>
-//     );
-//   }
-// }
-
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Details!</Text>
-      </View>
-    );
-  }
-}
+const topNavigator = createMaterialTopTabNavigator({
+  Events: {
+    screen: EventsScreen,
+  },
+  Users: {
+    screen: UsersScreen,
+  },
+},
+{
+  swipeEnabled: true,
+  tabBarOptions:{
+    activeTintColor: '#2699FB',
+    inactiveTintColor: '#ffffff',
+    style: {
+      backgroundColor: "#282c2f",
+    },
+    indicatorStyle:{
+      backgroundColor: "#2699FB",
+    },
+  },
+  initialRouteName: "Events",
+});
 
 export default createStackNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: topNavigator,
     navigationOptions: ({ navigation }) => ({
       title: "Train Time",
       headerTitleStyle: { color: "#FFF" },
