@@ -10,6 +10,8 @@ import SettingsContainer from './src/container/SettingsContainer';
 import FavoritesContainer from './src/container/FavoritesContainer';
 import CreateContainer from './src/container/CreateContainer';
 
+
+
 export default createAppContainer(
   createMaterialBottomTabNavigator(
     {
