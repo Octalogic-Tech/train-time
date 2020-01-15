@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Picker } from "react-native";
+import { View, ScrollView, Text, Picker } from "react-native";
 import { TextInput } from "react-native-paper";
 import { Dropdown } from "react-native-material-dropdown";
 import { Button } from 'react-native-paper';
@@ -9,8 +9,10 @@ const CreateScreen = () => {
   const [sport, setSport] = useState("");
 
   return (
+    <ScrollView > 
     <View style={{ margin: 10 }}>
-      <TextInput
+        
+            <TextInput
         label="Name"
         value={name}
         mode="outlined"
@@ -26,7 +28,7 @@ const CreateScreen = () => {
           borderStyle: "solid",
           paddingRight: 6,
           paddingLeft: 6,
-          marginVertical:10,
+          marginVertical:5,
         }}
         pickerStyle={{
           marginVertical:0,
@@ -62,7 +64,7 @@ const CreateScreen = () => {
           borderStyle: "solid",
           paddingRight: 6,
           paddingLeft: 6,
-          marginVertical:10,
+          marginVertical:5,
         }}
         pickerStyle={{
           marginVertical:0,
@@ -89,7 +91,7 @@ const CreateScreen = () => {
           borderStyle: "solid",
           paddingRight: 6,
           paddingLeft: 6,
-          marginVertical:10,
+          marginVertical:5,
         }}
         pickerStyle={{
           marginVertical:0,
@@ -120,7 +122,7 @@ const CreateScreen = () => {
           borderStyle: "solid",
           paddingRight: 6,
           paddingLeft: 6,
-          marginVertical:10,
+          marginVertical:5,
         }}
         pickerStyle={{
           marginVertical:0,
@@ -156,7 +158,7 @@ const CreateScreen = () => {
           borderStyle: "solid",
           paddingRight: 6,
           paddingLeft: 6,
-          marginVertical:10,
+          marginVertical:4,
         }}
         pickerStyle={{
           marginVertical:0,
@@ -176,7 +178,10 @@ const CreateScreen = () => {
       <Button mode="contained" onPress={() => console.log('Pressed')}>
     Create Event
   </Button>
-    </View>
+  </View>
+  </ScrollView>
+
+   
   );
 };
 
