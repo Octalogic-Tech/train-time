@@ -17,8 +17,6 @@ const theme = {
 
 export default function Main() {
   return (
-    <PaperProvider theme={theme}>
-      <App />
-    </PaperProvider>
+    <App />
   );
 }

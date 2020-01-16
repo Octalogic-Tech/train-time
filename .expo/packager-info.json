@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 39543,
-  "expoServerNgrokUrl": "https://af-kmf.glennferns93.traintime.exp.direct",
-  "packagerNgrokUrl": "https://packager.af-kmf.glennferns93.traintime.exp.direct",
-  "ngrokPid": 39573,
+  "packagerPid": 10406,
+  "expoServerNgrokUrl": "https://af-kmf.anonymous.traintime.exp.direct",
+  "packagerNgrokUrl": "https://packager.af-kmf.anonymous.traintime.exp.direct",
+  "ngrokPid": 10417,
   "webpackServerPort": null
 }
