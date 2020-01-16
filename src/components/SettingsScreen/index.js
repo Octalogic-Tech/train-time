@@ -3,17 +3,19 @@ import { ScrollView, View, Text } from "react-native";
 import { Button } from "react-native-paper";
 import { List } from "react-native-paper";
 
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
 const SettingsScreen = () => {
   return (
     <ScrollView>
       <List.Section>
         <List.Item
           title="My profile"
-          left={() => <List.Icon icon="account-outline" />}
+          left={() => <Icon name="account-outline" size={25} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
         <List.Item
           title="Create an activity"
-          left={() => <List.Icon color="#000" icon="plus" />}
+          left={() => <Icon name="plus" size={25} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
       </List.Section>
       <View
@@ -25,11 +27,11 @@ const SettingsScreen = () => {
       <List.Section>
         <List.Item
           title="My Media"
-          left={() => <List.Icon icon="folder-multiple-image" />}
+          left={() => <Icon name="folder-multiple-image" size={20} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
         <List.Item
           title="My Events"
-          left={() => <List.Icon color="#000" icon="calendar-outline" />}
+          left={() => <Icon name="calendar-outline" size={25} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
       </List.Section>
       <View
@@ -41,7 +43,7 @@ const SettingsScreen = () => {
       <List.Section>
         <List.Item
           title="Settings"
-          left={() => <List.Icon icon="settings-outline" />}
+          left={() => <Icon name="settings-outline" size={25} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
       </List.Section>
       <View
@@ -53,12 +55,12 @@ const SettingsScreen = () => {
       <List.Section>
         <List.Item
           title="Invite Friends"
-          left={() => <List.Icon icon="account-multiple-plus-outline" />}
+          left={() => <Icon name="account-multiple-plus-outline" size={25} style={{paddingHorizontal:"5%"}} color="#282c2f" />}
         />
         <List.Item
           title="Logout"
           titleStyle={{color:'red'}}
-          left={() => <List.Icon color="red" icon="logout-variant" />}
+          left={() => <Icon name="logout-variant" size={25} style={{paddingHorizontal:"5%"}} color="red" />}
         />
       </List.Section>
     </ScrollView>
