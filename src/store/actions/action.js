@@ -2,8 +2,9 @@ export const FETCH_EVENTS   = 'FETCH_EVENTS';
 export const FETCH_FAVS   = 'FETCH_FAVS';
 export const FETCH_USER   = 'FETCH_USER';
 
-export const fetchProductsBegin = () => ({
-    type: FETCH_EVENTS
+export const fetchProductsBegin = (payload) => ({
+    type: FETCH_EVENTS,
+    payload: payload
 });
   
 

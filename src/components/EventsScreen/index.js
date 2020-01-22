@@ -2,7 +2,15 @@ import React, { useState, useEffect }  from "react";
 import { ScrollView, Text } from "react-native";
 import EventCard from "../EventCard";
 import { connect } from 'react-redux';
-import {fetchFavs} from '../../store/actions/action';
+import {fetchFavs, fetchProductsBegin} from '../../store/actions/action';
+import faker from "faker";
+import moment from "moment";
+
+
+
+
+const city = faker.address.city();
+const country = faker.address.country();
 
 let payload = [{
   id:faker.random.uuid(),
@@ -51,7 +59,7 @@ const EventsScreen = (props) => {
   useEffect(() => {
     console.log("dfdf")
     // Update the document title using the browser API
-    props.fetchFavs(payload)
+    props.fetchProductsBegin(payload)
   });
   return (
     <ScrollView style={{ backgroundColor: "lightgray" }}>
@@ -67,7 +75,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  fetchFavs()
+  return {
+    fetchProductsBegin: (value) => {
+      dispatch(fetchProductsBegin(value));
+    }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsScreen);

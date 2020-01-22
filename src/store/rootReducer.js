@@ -12,7 +12,7 @@ const initialState = {
       ],
     loading: false,
     spin: false,
-    UserArray = [
+    UserArray : [
       {
         id:faker.random.uuid(),
         name:faker.name.findName(),
@@ -34,7 +34,7 @@ export default function productReducer(state = initialState, action) {
         // Also, reset any errors. We're starting fresh.
         return {
           ...state,
-          loading: true
+          items: action.payload
         };
 
       case FETCH_FAVS:
