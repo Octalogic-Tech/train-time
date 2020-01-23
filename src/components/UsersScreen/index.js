@@ -1,6 +1,8 @@
-import React from "react";
+import React,  { useEffect }  from "react";
 import { ScrollView, Text } from "react-native";
 import faker from "faker";
+import { connect } from 'react-redux';
+import {fetchUser, fetchProductsBegin} from '../../store/actions/action';
 
 import UserCard from "../UserCard";
 
@@ -30,14 +32,31 @@ const UserArray = [
   },
 ];
 
-const UsersScreen = () => {
+const UsersScreen = (props) => {
+  useEffect(() => {
+    // Update the document title using the browser API
+    props.fetchUser(UserArray)
+  });
+
   return (
     <ScrollView style={{ backgroundColor: "lightgray" }}>
-      {UserArray.map((value, index) => {
+      {props.users.map((value, index) => {
         return <UserCard key={value.id} value={value}></UserCard>
       })}
     </ScrollView>
   );
 };
 
-export default UsersScreen;
+const mapStateToProps = state => ({
+  users: state.UserArray,
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchUser: (value) => {
+      dispatch(fetchUser(value));
+    }
+  };
+}
+
+export default  connect(mapStateToProps, mapDispatchToProps)(UsersScreen);

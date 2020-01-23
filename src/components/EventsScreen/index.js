@@ -59,7 +59,7 @@ const EventsScreen = (props) => {
   useEffect(() => {
     console.log("dfdf")
     // Update the document title using the browser API
-    props.fetchProductsBegin(payload)
+    props.fetchFavs(payload)
   });
   return (
     <ScrollView style={{ backgroundColor: "lightgray" }}>
@@ -76,8 +76,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProductsBegin: (value) => {
-      dispatch(fetchProductsBegin(value));
+    fetchFavs: (value) => {
+      dispatch(fetchFavs(value));
     }
   };
 }

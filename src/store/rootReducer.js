@@ -1,6 +1,6 @@
 import faker from "faker";
 import moment from "moment";
-import { FETCH_EVENTS, FETCH_FAVS} from './actions/action'
+import { FETCH_EVENTS, FETCH_FAVS, FETCH_USER} from './actions/action'
 
 
 
@@ -13,16 +13,6 @@ const initialState = {
     loading: false,
     spin: false,
     UserArray : [
-      {
-        id:faker.random.uuid(),
-        name:faker.name.findName(),
-        city:city,
-        country:country,
-        favorite:true,
-        image:faker.image.avatar(),
-        cover:'https://source.unsplash.com/random',
-        language:'EN',
-      },
     ]
 }
 
@@ -43,15 +33,15 @@ export default function productReducer(state = initialState, action) {
             // Also, reset any errors. We're starting fresh.
         return {
           ...state,
-          pin: true
+          tems: action.payload
         };
-        case FETCH_FAVS:
+        case FETCH_USER:
             console.log("fdfdf")
                 // Mark the state as "loading" so we can show a spinner or something
                 // Also, reset any errors. We're starting fresh.
           return {
-            ...state.UserArray,
-            spin: true
+            ...state,
+            UserArray: action.payload
           };
   
       default:

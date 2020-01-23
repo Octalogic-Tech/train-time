@@ -8,10 +8,12 @@ export const fetchProductsBegin = (payload) => ({
 });
   
 
-export const fetchFavs = () => ({
-    type: FETCH_FAVS
+export const fetchFavs = (payload) => ({
+    type: FETCH_FAVS,
+    payload: payload
 });
 
-export const fetchUser = () => ({
-  type: FETCH_USER
+export const fetchUser = (payload) => ({
+  type: FETCH_USER,
+  payload: payload
 });
